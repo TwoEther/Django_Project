@@ -1,10 +1,12 @@
-from django.shortcuts import render
 from .models import Post
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 
 class PostList(ListView):
     model = Post
     #template_name = 'blog/post_list.html'
+
+class PostDetail(DetailView):
+    model = Post
 
 # Create your views here.
 # FBV
