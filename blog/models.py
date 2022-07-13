@@ -1,3 +1,4 @@
+from distutils.command.upload import upload
 from django.db import models
 
 
@@ -6,6 +7,7 @@ class Post(models.Model):
     title = models.CharField(max_length=30)
     content = models.TextField()
 
+    head_image = models.ImageField(upload_to='blog/images/%Y/%m/%d', blank=True)
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
 
@@ -15,4 +17,4 @@ class Post(models.Model):
     def get_absolute_url(self):
         return f'/blog/{self.pk}/'
     # auto. 추후 작성
-#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
+#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z
