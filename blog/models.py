@@ -8,6 +8,7 @@ class Post(models.Model):
     content = models.TextField()
 
     head_image = models.ImageField(upload_to='blog/images/%Y/%m/%d', blank=True)
+    file_upload = models.FileField(upload_to='blog/files/%Y/%m/%d/', blank=True)
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
 
@@ -17,4 +18,4 @@ class Post(models.Model):
     def get_absolute_url(self):
         return f'/blog/{self.pk}/'
     # auto. 추후 작성
-#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z
+#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
