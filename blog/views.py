@@ -131,6 +131,7 @@ class PostUpdate(LoginRequiredMixin, UpdateView):
             tags_str_list = list()
             for t in self.object.tags.all():
                 tags_str_list.append(t.name)
+            print(tags_str_list)
             context['tags_str_default'] = ';'.join(tags_str_list)
 
         return context
